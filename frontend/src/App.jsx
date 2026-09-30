@@ -216,6 +216,27 @@ function App() {
 
   const showDropzone = status === "idle" || status === "error";
 
+  const UEBERSETZUNG = {
+    Tu: "Di",
+    We: "Mi",
+    Th: "Do",
+    Su: "So",
+    PH: "Feiertag",
+    SH: "Schulferien",
+    off: "geschlossen",
+  };
+
+  function formatOpeningHours(value) {
+    return value
+      .replace(
+        /\b(Tu|We|Th|Su|PH|SH|off)\b/g,
+        (kuerzel) => UEBERSETZUNG[kuerzel],
+      )
+      .split(";")
+      .map((teil) => teil.trim())
+      .filter(Boolean);
+  }
+
   return (
     <div className="app">
       <aside className="panel" aria-label="Routenplaner">
@@ -336,6 +357,14 @@ function App() {
             <Popup>
               <div className="popup__name">{cafe.name}</div>
               <VeganBadge value={cafe.vegan} />
+              {cafe.opening_hours && (
+                <div className="popup__hours">
+                  <strong>Öffnungszeiten</strong>
+                  {formatOpeningHours(cafe.opening_hours).map((teil) => (
+                    <div key={teil}>{teil}</div>
+                  ))}
+                </div>
+              )}
             </Popup>
           </Marker>
         ))}

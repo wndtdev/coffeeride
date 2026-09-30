@@ -25,6 +25,7 @@ router.post("/cafes", async (req, res) => {
         cuisine,
         vegan,
         vegetarian,
+        opening_hours,
         ST_X(ST_Transform(geom, 4326)) AS lon,
         ST_Y(ST_Transform(geom, 4326)) AS lat
       FROM cafes

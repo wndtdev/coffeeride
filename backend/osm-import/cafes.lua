@@ -5,6 +5,7 @@ local cafes = osm2pgsql.define_node_table('cafes', {
     { column = 'cuisine',    type = 'text' },
     { column = 'vegan',      type = 'text' },
     { column = 'vegetarian', type = 'text' },
+    { column = 'opening_hours', type = 'text' },
     { column = 'geom',       type = 'point', not_null = true },
 })
 
@@ -21,6 +22,7 @@ function osm2pgsql.process_node(object)
         cuisine    = object.tags.cuisine,
         vegan      = object.tags['diet:vegan'],
         vegetarian = object.tags['diet:vegetarian'],
+        opening_hours = object.tags.opening_hours,
         geom       = object:as_point(),
     })
 end

@@ -408,3 +408,8 @@ button {
     display: none;
   }
 }
+
+.popup__hours {
+  margin-top: 10px;
+  font-size: 0.85rem;
+}
