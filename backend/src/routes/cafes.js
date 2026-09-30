@@ -1,6 +1,8 @@
 import { Router } from "express";
 import { pool } from "../db.js";
 
+console.log("!!! CAFES-ROUTE GELADEN - TESTMARKIERUNG 12345 !!!");
+
 const router = Router();
 
 router.post("/cafes", async (req, res) => {
