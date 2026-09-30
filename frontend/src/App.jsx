@@ -14,17 +14,14 @@ import buffer from "@turf/buffer";
 
 const API_URL = "http://localhost:4000/api/cafes";
 
-// Annahme: OSM-Werte des Tags diet:vegan
 const VEGAN_LABEL = {
   only: "Rein vegan",
   yes: "Vegane Optionen",
   limited: "Wenige vegane Optionen",
 };
 
-// Sortierreihenfolge der Cafés mit veganen Optionen
 const VEGAN_RANK = { only: 0, yes: 1, limited: 2 };
 
-// Namen, die als "unbekannt" gelten und ausgeblendet werden
 const UNKNOWN_NAMES = ["unbekannt", "unbenannt", "unnamed"];
 
 const cupSvg = `<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V8z"/><path d="M17 9h1.5a2.5 2.5 0 0 1 0 5H17"/><path d="M8 3v2M12 3v2"/></svg>`;
@@ -63,7 +60,6 @@ function usePrefersDark() {
   return dark;
 }
 
-// Cafés ohne aussagekräftigen Namen oder mit "vegan: no" werden nicht angezeigt
 function isShown(cafe) {
   const name = cafe.name?.trim().toLowerCase();
   if (!name || UNKNOWN_NAMES.includes(name)) return false;
@@ -118,7 +114,6 @@ function App() {
   const markerRefs = useRef({});
   const dark = usePrefersDark();
 
-  // Cafés mit veganen Optionen (nach Relevanz sortiert) vs. ohne Angabe
   const veganCafes = useMemo(
     () =>
       cafes
@@ -131,7 +126,6 @@ function App() {
     [cafes],
   );
 
-  // Karte nach dem Upload auf die Route zoomen (Panel wird eingerechnet)
   useEffect(() => {
     if (!map || !routeData) return;
     const bounds = L.geoJSON(routeData).getBounds();
@@ -159,7 +153,6 @@ function App() {
       );
       const geoJson = gpx(xmlDoc);
 
-      // Erste Linie nehmen – Waypoints (Points) würden buffer() sonst brechen
       const routeLine = geoJson.features.find((f) =>
         ["LineString", "MultiLineString"].includes(f.geometry?.type),
       );
@@ -200,7 +193,7 @@ function App() {
 
   function handleFileChange(event) {
     processFile(event.target.files[0]);
-    event.target.value = ""; // dieselbe Datei erneut wählbar
+    event.target.value = "";
   }
 
   function handleDrop(event) {
