@@ -1,6 +1,6 @@
 # coffeeride ☕🌱
 
-[coffeeridedemo](https://github.com/wndtdev/coffeeride/etc/demo.gif)
+![coffeeridedemo](https://github.com/wndtdev/coffeeride/tree/main/etc/demo.gif)
 
 A café-stop planning tool for road cyclists: upload a GPX and discover cafés along the way, including information about vegan options.
 
@@ -137,7 +137,7 @@ The application will be available at `http://localhost:5173`.
 ## Usage
 
 1. Open the application in your browser.
-2. Upload a GPX file containing your planned route. You can use this [sample](https://github.com/wndtdev/coffeeride/etc/sample.gpx).
+2. Upload a GPX file containing your planned route. You can use this [sample](https://github.com/wndtdev/coffeeride/tree/main/etc/sample.gpx).
 3. View the route on the map, with nearby cafés displayed as markers.
 4. Browse the café list to find places offering vegan options.
 
@@ -147,4 +147,4 @@ The available data covers only the imported geographic area. Routes outside this
 
 Map data © [OpenStreetMap contributors](https://www.openstreetmap.org/copyright), provided via [Geofabrik](https://download.geofabrik.de/). Map tiles provided by CARTO.
 
-[demolightmode](https://github.com/wndtdev/coffeeride/etc/demo_lightmode.png)
+![demolightmode](https://github.com/wndtdev/coffeeride/tree/main/etc/demo_lightmode.png)
