@@ -1,11 +1,11 @@
 services:
   postgis:
     image: postgis/postgis:16-3.4
-    container_name: cofferide-postgis
+    container_name: coffeeride-postgis
     restart: unless-stopped
     environment:
-      POSTGRES_DB: cofferide
-      POSTGRES_USER: cofferide
+      POSTGRES_DB: coffeeride
+      POSTGRES_USER: coffeeride
       POSTGRES_PASSWORD: change_me
     ports:
       - "5432:5432"

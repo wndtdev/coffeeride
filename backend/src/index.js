@@ -14,5 +14,5 @@ app.get("/health", (req, res) => res.json({ status: "ok" }));
 
 const port = process.env.PORT || 4000;
 app.listen(port, () => {
-  console.log(`Cofferide-Server läuft auf Port ${port}`);
+  console.log(`Coffeeride-Server läuft auf Port ${port}`);
 });
