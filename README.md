@@ -1,6 +1,6 @@
 # coffeeride ☕🌱
 
-![coffeeridedemo](https://github.com/wndtdev/coffeeride/tree/main/etc/demo.gif)
+![coffeeridedemo](etc/demo.gif)
 
 A café-stop planning tool for road cyclists: upload a GPX and discover cafés along the way, including information about vegan options.
 
@@ -147,4 +147,4 @@ The available data covers only the imported geographic area. Routes outside this
 
 Map data © [OpenStreetMap contributors](https://www.openstreetmap.org/copyright), provided via [Geofabrik](https://download.geofabrik.de/). Map tiles provided by CARTO.
 
-![demolightmode](https://github.com/wndtdev/coffeeride/tree/main/etc/demo_lightmode.png)
+![demolightmode](etc/demo_lightmode.png)
