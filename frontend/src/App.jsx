@@ -12,7 +12,7 @@ import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import buffer from "@turf/buffer";
 
-const API_URL = "http://localhost:4000/api/cafes";
+const API_URL = import.meta.env.VITE_API_URL;
 
 const VEGAN_LABEL = {
   only: "Rein vegan",
